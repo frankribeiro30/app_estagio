@@ -4,7 +4,7 @@
   "service": "app",
   "workspaceFolder": "/app",
   "shutdownAction": "stopCompose",
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "test -f .env || cp .env.example .env && npm install",
 
   "customizations": {
     "vscode": {
