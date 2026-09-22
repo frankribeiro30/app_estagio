@@ -11,5 +11,13 @@ export class UserService {
     async create(user: User): Promise<User> {
         return await this.repository.create(user);
     }
+
+    async findById(id: string): Promise<User>{
+        const user = await this.repository.findById(id)
+        if (!user){
+            throw new Error("Usuario nao encontrado")
+        }
+        return user
+    }
 }
 

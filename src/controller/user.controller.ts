@@ -15,4 +15,10 @@ export class UserController {
         const newUser = await this.service.create(user)
         replay.status(201).send(newUser)
     }
+
+    async findById(request: FastifyRequest, replay: FastifyReply): Promise<void> {
+        const { id } = request.params as { id: string}
+        const user = await this.service.findById(id)
+        return replay.send(user)
+    }
 }
