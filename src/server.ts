@@ -2,10 +2,7 @@ import Fastify from 'fastify'
 import { userRoutes } from "./routes/user.routes";
 
 const app = Fastify({
-  logger: true,
-  routerOptions: {
-    ignoreTrailingSlash: true,
-  },
+  logger: true,  
 });
 
 app.get("/", async () => {
@@ -23,8 +20,6 @@ const start = async () => {
       },
       { prefix: "/api/v1" },
     );
-
-    console.log(app.printRoutes());
 
     await app.listen({
       host: "0.0.0.0",
