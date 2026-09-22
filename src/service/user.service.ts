@@ -19,5 +19,13 @@ export class UserService {
         }
         return user
     }
+
+    async findAll(): Promise<User[]>{
+        const users = await this.repository.findAll()
+        if (!users){
+            throw new Error("Nenhum usuario encontrado")
+        }
+        return users
+    }
 }
 

@@ -21,4 +21,9 @@ export class UserController {
         const user = await this.service.findById(id)
         return replay.send(user)
     }
+
+    async findAll(request: FastifyRequest, replay: FastifyReply): Promise<void> {
+        const users = await this.service.findAll()
+        return replay.send(users)
+    }
 }

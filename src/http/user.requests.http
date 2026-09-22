@@ -9,3 +9,6 @@ Content-Type: application/json
 
 ### Buscar usuario por id
 GET http://localhost:3000/api/v1/users/ecba567b-888a-4dc2-8310-40aa61cf6318
+
+### Buscar todos os usuarios
+GET http://localhost:3000/api/v1/users
