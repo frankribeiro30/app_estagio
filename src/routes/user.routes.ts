@@ -10,4 +10,6 @@ export async function userRoutes(app: FastifyInstance) {
     app.post("/", { handler: controller.create.bind(controller),});
 
     app.get("/:id", {handler: controller.findById.bind(controller),});
+
+    app.get("/", {handler: controller.findAll.bind(controller),});
 }

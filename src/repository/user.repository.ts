@@ -20,4 +20,12 @@ export class UserRepository {
         })
         return user
     }
+
+    async findAll(): Promise<User[] | []>{
+        const users = await prisma.user.findMany({
+            orderBy: {name: "asc"} 
+        })
+
+        return users
+    }
 }
